@@ -24,11 +24,12 @@ module bin(x, y)
 {
     w = (39 * x) + (x - 1);
     l = (54 * y) + (y - 1);
+    thickness = 2;
     outside = [w, l, 40];
-    inside = outside - [2, 2, 0];
+    inside = outside - [2 * thickness, 2 * thickness, 0];
     difference() {
         cube(outside);
-        translate([1, 1, 1]) cube(inside);
+        translate([thickness, thickness, thickness]) cube(inside);
     }
     feet(w, l);
 }

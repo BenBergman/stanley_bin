@@ -57,15 +57,15 @@ solid OpenSCAD_Model
   endfacet
   facet normal 0 0 1
     outer loop
-      vertex 1 1 40
+      vertex 2 2 40
       vertex 0 0 40
       vertex 79 0 40
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
-      vertex 78 1 40
-      vertex 1 1 40
+      vertex 77 2 40
+      vertex 2 2 40
       vertex 79 0 40
     endloop
   endfacet
@@ -73,41 +73,41 @@ solid OpenSCAD_Model
     outer loop
       vertex 0 219 40
       vertex 0 0 40
-      vertex 1 1 40
+      vertex 2 2 40
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
       vertex 79 219 40
       vertex 0 219 40
-      vertex 1 218 40
+      vertex 2 217 40
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
       vertex 79 219 40
-      vertex 78 218 40
+      vertex 77 217 40
       vertex 79 0 40
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
       vertex 79 219 40
-      vertex 1 218 40
-      vertex 78 218 40
+      vertex 2 217 40
+      vertex 77 217 40
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
-      vertex 78 218 40
-      vertex 78 1 40
+      vertex 77 217 40
+      vertex 77 2 40
       vertex 79 0 40
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
-      vertex 1 1 40
-      vertex 1 218 40
+      vertex 2 2 40
+      vertex 2 217 40
       vertex 0 219 40
     endloop
   endfacet
@@ -127,72 +127,72 @@ solid OpenSCAD_Model
   endfacet
   facet normal 1 0 0
     outer loop
-      vertex 1 218 1
-      vertex 1 218 40
-      vertex 1 1 40
+      vertex 2 217 2
+      vertex 2 217 40
+      vertex 2 2 40
     endloop
   endfacet
   facet normal 1 0 0
     outer loop
-      vertex 1 1 1
-      vertex 1 218 1
-      vertex 1 1 40
+      vertex 2 2 2
+      vertex 2 217 2
+      vertex 2 2 40
     endloop
   endfacet
   facet normal 0 1 0
     outer loop
-      vertex 78 1 40
-      vertex 78 1 1
-      vertex 1 1 40
+      vertex 77 2 40
+      vertex 77 2 2
+      vertex 2 2 40
     endloop
   endfacet
   facet normal 0 1 0
     outer loop
-      vertex 1 1 40
-      vertex 78 1 1
-      vertex 1 1 1
+      vertex 2 2 40
+      vertex 77 2 2
+      vertex 2 2 2
     endloop
   endfacet
   facet normal -1 0 0
     outer loop
-      vertex 78 218 40
-      vertex 78 218 1
-      vertex 78 1 40
+      vertex 77 217 40
+      vertex 77 217 2
+      vertex 77 2 40
     endloop
   endfacet
   facet normal -1 0 0
     outer loop
-      vertex 78 1 40
-      vertex 78 218 1
-      vertex 78 1 1
+      vertex 77 2 40
+      vertex 77 217 2
+      vertex 77 2 2
     endloop
   endfacet
   facet normal 0 -1 0
     outer loop
-      vertex 78 218 1
-      vertex 78 218 40
-      vertex 1 218 40
+      vertex 77 217 2
+      vertex 77 217 40
+      vertex 2 217 40
     endloop
   endfacet
   facet normal 0 -1 0
     outer loop
-      vertex 1 218 1
-      vertex 78 218 1
-      vertex 1 218 40
+      vertex 2 217 2
+      vertex 77 217 2
+      vertex 2 217 40
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
-      vertex 78 1 1
-      vertex 78 218 1
-      vertex 1 218 1
+      vertex 77 2 2
+      vertex 77 217 2
+      vertex 2 217 2
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
-      vertex 1 1 1
-      vertex 78 1 1
-      vertex 1 218 1
+      vertex 2 2 2
+      vertex 77 2 2
+      vertex 2 217 2
     endloop
   endfacet
   facet normal -1 0 0
