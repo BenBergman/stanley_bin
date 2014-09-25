@@ -3,8 +3,8 @@ y = 1;
 
 module foot()
 {
-    height = 2.7;
-    radius = 6;
+    height = 3.5;
+    radius = 5;
 
     translate([0, 0, height * -1]) intersection() {
         cylinder(h = height, r1 = radius, r2 = radius, $fn = 100);
