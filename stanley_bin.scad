@@ -1,37 +1,62 @@
+$fn=120;
+
 x = 1;
 y = 1;
 
+
+BIN_W=40;
+BIN_L=55;
+BIN_H=40.8;
+FOOT_H=3;
+FOOT_R=15/2;
+
+
+module rounded_square(dim, r)
+{
+    offset(r) offset(-r) square(dim);
+}
+
 module foot()
 {
-    height = 3.5;
-    radius = 5;
-
-    translate([0, 0, height * -1]) intersection() {
-        cylinder(h = height, r1 = radius, r2 = radius, $fn = 100);
-        cube(radius + 1, radius + 1, height + 1);
+    intersection() {
+        circle(r = FOOT_R, $fn = 100);
+        square([FOOT_R + 1, FOOT_R + 1]);
     }
 }
 
 module feet(w, l)
 {
     foot();
-    translate([w, l, 0]) rotate([0, 0, 180]) foot();
-    translate([0, l, 0]) rotate([0, 0, -90]) foot();
-    translate([w, 0, 0]) rotate([0, 0, 90]) foot();
+    translate([w, l]) rotate([0, 0, 180]) foot();
+    translate([0, l]) rotate([0, 0, -90]) foot();
+    translate([w, 0]) rotate([0, 0, 90]) foot();
 }
 
-module bin(x, y)
+module bin(x, y, thickness=1.5, spacing=0.5, r=1, chamfer=3)
 {
-    w = (39 * x) + (x - 1);
-    l = (54 * y) + (y - 1);
-    thickness = 2;
-    outside = [w, l, 40];
-    inside = outside - [2 * thickness, 2 * thickness, 0];
-    difference() {
-        cube(outside);
-        translate([thickness, thickness, thickness]) cube(inside);
+    w = BIN_W * x - spacing;
+    l = BIN_L * y - spacing;
+
+    outside = [w, l];
+    inside = outside - [2 * thickness, 2 * thickness];
+
+    translate([spacing/2, spacing/2, 0]) {
+        difference() {
+            linear_extrude(BIN_H) rounded_square(outside, r=r+thickness);
+            //translate([thickness, thickness, thickness]) linear_extrude(BIN_H) rounded_square(inside, r=r);
+            hull() {
+                translate([thickness, thickness, thickness+chamfer]) linear_extrude(BIN_H) rounded_square(inside, r=r);
+                translate([thickness+chamfer, thickness+chamfer, thickness]) linear_extrude(BIN_H) rounded_square(inside - [2*chamfer, 2*chamfer], r=r);
+            }
+        }
+
+        translate([0, 0, -FOOT_H]) linear_extrude(FOOT_H) intersection() {
+            feet(w, l);
+            rounded_square(outside, r=r+thickness);
+        }
     }
-    feet(w, l);
 }
+
+
 
 bin(x, y);
